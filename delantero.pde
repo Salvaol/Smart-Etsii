@@ -55,16 +55,16 @@ class delantero extends jugador{
       posY2=posY2+vely;*/ //Esto se usará para la simulación
       if(posY2>ymax || posY2<ymin) velY=-velY;
       posY2=posY2+velY;
-      
+       /*
       dibujarjug(posX2,posY2,angulo);
       dibujarjug(posX2,posY2-distancia,angulo);
       dibujarjug(posX2,posY2-distancia*2,angulo);
-      
-      /*
+      */
+     
       dibujarjug(posX2, mov, angulo);
       dibujarjug(posX2,mov-distancia,angulo);
       dibujarjug(posX2,mov-distancia*2,angulo);
-      */
+      
     
     }
     

@@ -24,7 +24,7 @@ class medio extends jugador{
     ymin=(0.1)*anchoimg/1.36+distancia*4+anchojug/2;
     velY=0;
     }
-
+  
 
 //Esta función comprueba que equipo dibujamos, para saber que posición de x aplicar. 
 //Se toma como referencia el jugador de más abajo y se suma la distancia.    
@@ -60,19 +60,19 @@ class medio extends jugador{
       posY2=posY2+vely;*/ //Esto se usará para la simulación
       if(posY2>ymax || posY2<ymin) velY=-velY;
       posY2=posY2+velY;
-      
+      /*
       dibujarjug(posX2,posY2,angulo);
       dibujarjug(posX2,posY2-distancia,angulo);
       dibujarjug(posX2,posY2-distancia*2,angulo);
       dibujarjug(posX2,posY2-distancia*3,angulo);
       dibujarjug(posX2,posY2-distancia*4,angulo);
-      /*
+      */
       dibujarjug(posX2, mov, angulo);
       dibujarjug(posX2,mov-distancia,angulo);
       dibujarjug(posX2,mov-distancia*2,angulo);
       dibujarjug(posX2,mov-distancia*3,angulo);
       dibujarjug(posX2,mov-distancia*4,angulo);
-      */
+      
     }
     
   } 

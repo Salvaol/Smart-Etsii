@@ -14,7 +14,7 @@ class defensa extends jugador{
     ymin=(0.1)*anchoimg/1.36+distancia+anchojug/2;
     velY=0;
   }
-    
+ 
 //Esta función comprueba que equipo dibujamos, para saber que posición de x aplicar. 
 //Se toma como referencia el jugador de más abajo y se suma la distancia. 
   void dibujarjugador(int equipo, float mov, float angulo){
@@ -39,21 +39,21 @@ class defensa extends jugador{
       
     }
     
-    //Función para que se muevan aleatoriamente
+    /*//Función para que se muevan aleatoriamente
      if(equipo==2){
       fill(0,0,0);
       if(posY2>ymax || posY2<ymin) velY=-velY;
       posY2=posY2+velY;
       dibujarjug(posX2,posY2,angulo);
       dibujarjug(posX2,posY2-distancia,angulo);
-    }
+    }*/
     
    //Función para dibujar en la posición que nos envían
-   /*if(equipo==2){
+   if(equipo==2){
       fill(0,0,0);
      dibujarjug(posX2, mov, angulo);
      dibujarjug(posX2,mov-distancia,angulo);
-    }*/
+    }
     
 }
   

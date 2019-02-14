@@ -150,7 +150,7 @@ void draw(){
         text("pausa",  xizq  , ymarcador + 0.09*anchoimg/1.36  ); 
         //estas condiciones son para evitar los rebotes al soltar la tecla P
         if (banderapausa<25){
-          println(banderapausa);
+          //println(banderapausa);
           key='0';
           banderapausa++;}
         
@@ -158,7 +158,8 @@ void draw(){
           if(key=='p' || key=='P'){
             if(banderapausa<50){
               banderapausa++;
-              println(banderapausa);}
+              //println(banderapausa);
+            }
             else {
               key='0';
               banderapausa=0;
@@ -220,8 +221,10 @@ void draw(){
       barraactiva();
    
     //Envio de información a inteligencia y control
-      enviar= "#" + ":" + str(bola.getx()) + ":" + str(bola.gety())+ ":" + str(bola.posX)+ ":" + str(bola.posY) + ":" + "#";
+      enviar= str(bola.getx()) + ":" + str(bola.gety())+ ":" + str(bola.velX)+ ":" + str(bola.velY) + ":" + "#";
       myServer.write(enviar);
+      print("Envio:  ");
+      println(enviar);
     }
 }
 
@@ -395,17 +398,25 @@ int comprobarchoques(){
 
 //Función que permite procesar la información mandada a través de sockets por Inteligencia y Control
 void ProcessMessage (String message){
+    print("Recibiendo:  ");
+    println(message);
     aux = split(message, ":");
-    if(aux[0]=="#" && aux[9]=="#"){
-      posport=float(aux[1])*anchoimg/1.36+ysup;
+    //if(aux[0]=="#" && aux[9]=="#"){
+      posport=float(aux[1])*anchoimg/(1000*1.36)+ysup;
+      port2.posY2=posport;
+      print("cm: "); println(aux[1]);
+      print("píxeles: "); println(posport);
       angport=float(aux[2]);
-      posdef=float(aux[3])*anchoimg/1.36+ysup;
+      posdef=float(aux[3])*anchoimg/(1000*1.36)+ysup+def2.distancia;
+      def2.posY2=posdef;
       angdef=float(aux[4]);
-      posmed=float(aux[5])*anchoimg/1.36+ysup;
+      posmed=float(aux[5])*anchoimg/(1000*1.36)+ysup+4*med2.distancia;
+      med2.posY2=posmed;
       angmed=float(aux[6]);
-      posdel=float(aux[7])*anchoimg/1.36+ysup;
+      posdel=float(aux[7])*anchoimg/(1000*1.36)+ysup+2*del2.distancia;
+      del2.posY2=posdel;
       angdel=float(aux[8]);
-    }    
+    //}    
 }
 
 void dibujarmarcador(){

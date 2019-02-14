@@ -29,6 +29,7 @@ class portero extends jugador{
     if (equipo==2) dibujarjug(posX2,posY2,0);
   }
   
+  
 //Esta función comprueba que equipo dibujamos, para saber que posición de x aplicar. 
 //Se toma como referencia el jugador de más abajo y se suma la distancia.       
   void dibujarportero(int equipo, float mov, float angulo){
@@ -55,10 +56,10 @@ class portero extends jugador{
       if(posY2>ymax || posY2<ymin) velY=-velY;
       posY2=posY2+velY;
       
-      dibujarjug(posX2,posY2,angulo);
-      /*
+      //dibujarjug(posX2,posY2,angulo);
+      
       dibujarjug(posX2,mov,angulo);
-      */
+      
     }  
   }
 }
