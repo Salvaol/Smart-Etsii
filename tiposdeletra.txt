@@ -1,0 +1,16 @@
+  
+void setup(){
+size(2000, 2000);
+
+
+
+//textFont(createFont("OCR A Extended", 28));
+
+textFont(createFont("HGMaruGothicMPRO", 28));
+}
+
+void draw(){
+background(256,250,256);
+fill(0,0,0);
+text("Gol", 500, 500);
+}
